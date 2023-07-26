@@ -22,8 +22,14 @@ export default {
         }
       },
       backgroundImage: {
-        'waves': "url('./src/assets/branding/topography.svg')",
+        'waves': "url('./src/assets/branding/waves.svg')",
       },
+      height: {
+        '1/10': '10%',
+      },
+      margin: {
+        'x-50': '0  35%',
+      }
     },
     accentColor: ({ theme }) => ({
       ...theme('colors'),

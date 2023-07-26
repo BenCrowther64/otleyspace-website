@@ -1,34 +1,21 @@
 <template>
-    <div class="sticky top-0 flex flex-col items-center gap-8 w-full h-6/12 bg-waves bg-otley-light-blue bg-repeat py-8">
-        <img v-if="atTop" @mouseover="warnDisabled" :class="{ 'animate-rotate-y' : disabled }" class="w-80" src="../assets/branding/otley-space-logo.png" alt="Otley Space Logo">
-        <div class="flex gap-5 text-3xl">
-            <div class="flex flex-col items-center">
-                <router-link class="m-0 p-0 transition ease-in-out delay-50 text-white hover:-translate-y-0.5 hover:scale-110 hover:text-otley-dark-blue duration-300" to="/">Home</router-link>
-                <img v-if="checkCurrentRoute('Home')" class="w-4 -mt-1" src="../assets/homepage/up-svg.svg">
-            </div>
-            <div class="flex flex-col items-center">
-                <router-link class="m-0 p-0 transition ease-in-out delay-50 text-white hover:-translate-y-0.5 hover:scale-110 hover:text-otley-dark-blue duration-300" to="/about">About</router-link>
-                <img v-if="checkCurrentRoute('About')" class="w-4 -mt-1" src="../assets/homepage/up-svg.svg">
-            </div>
-            <div class="flex flex-col items-center">
-                <router-link class="m-0 p-0 transition ease-in-out delay-50 text-white hover:-translate-y-0.5 hover:scale-110 hover:text-otley-dark-blue duration-300" to="/contact">Contact</router-link>
-                <img v-if="checkCurrentRoute('Contact')" class="w-4 -mt-1" src="../assets/homepage/up-svg.svg">
-            </div>
-        </div>
-    </div>
+    <Transition name="header-up">
+        <img v-show="!hasScroll" @mouseover="warnDisabled" :class="{ 'animate-rotate-y' : disabled}" class="absolute w-80 left-1/2 -ml-40 mt-8 z-50" src="../assets/branding/otley-space-logo.png" alt="Otley Space Logo">
+    </Transition>
 </template>
 
 <script setup>
-    import { onUnmounted, ref, } from 'vue';
-    import { useRouter } from 'vue-router';
+    import { onMounted, onUnmounted, ref, } from 'vue';
 
+    const hasScroll = ref(false);
     const disabled = ref(false);
-    const router = useRouter();
-    const atTop = ref(true);
-
-    let currrentRouteName = router.currentRoute.value.name;
 
     window.addEventListener('scroll', handleScroll);
+    onMounted(() => {
+        if (document.documentElement.scrollTop > 0) {
+            hasScroll.value = true;
+        }
+    });
     onUnmounted(() => {
         window.removeEventListener('scroll', handleScroll);
     });
@@ -41,26 +28,24 @@
         }, 1000);
     }
 
-    function checkCurrentRoute(name) {
-        if (currrentRouteName === name) return true;
-        return false;
-    }
-
     function handleScroll() {
-        if (document.documentElement.scrollTop || document.body.scrollTop > 0) {
-            atTop.value = false;
+        if (document.documentElement.scrollTop > 0) {
+            hasScroll.value = true;
         } else {
-            atTop.value = true;
+            hasScroll.value = false;
         }
     }
-
 </script>
 
 <style>
-    .router-link-active {
-        margin: 0;
-        padding: 0;
-        color: #22314E;
-        pointer-events: none;
+    .header-up-enter-active,
+    .header-up-leave-active{
+        transition: all 1s ease;
+    }
+
+    .header-up-enter-from,
+    .header-up-leave-to {
+        transform: translateY(-100%);
+        opacity: 0;
     }
 </style>
