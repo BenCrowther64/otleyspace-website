@@ -1,23 +1,23 @@
 <template>
 
-    <div :class="{'sticky' : smallNav, 'unstick' : !smallNav}" class="bg-waves bg-otley-light-blue bg-repeat">
+    <div :class="{'unpadded' : smallNav, 'padded' : !smallNav}" class="sticky top-0 bg-waves z-40 bg-otley-light-blue bg-repeat">
 
-        <div :class="{'slide' : smallNav, 'unslide': !smallNav}" class="relative flex flex-row gap-5 text-4xl p-4 w-min place-content-center">
-           
-            <div class="flex flex-col items-center">
-                <router-link class="m-0 p-0 transition ease-in-out delay-50 text-white hover:-translate-y-0.5 hover:scale-110 hover:text-otley-dark-blue duration-300" to="/">Home</router-link>
-                <img v-if="checkCurrentRoute('Home')" class="w-4 -mt-1" src="../assets/homepage/up-svg.svg">
-            </div>
-            <div class="flex flex-col items-center">
-                <router-link class="m-0 p-0 transition ease-in-out delay-50 text-white hover:-translate-y-0.5 hover:scale-110 hover:text-otley-dark-blue duration-300" to="/about">About</router-link>
-                <img v-if="checkCurrentRoute('About')" class="w-4 -mt-1" src="../assets/homepage/up-svg.svg">
-            </div>
-            <div class="flex flex-col items-center">
-                <router-link class="m-0 p-0 transition ease-in-out delay-50 text-white hover:-translate-y-0.5 hover:scale-110 hover:text-otley-dark-blue duration-300" to="/contact">Contact</router-link>
-                <img v-if="checkCurrentRoute('Contact')" class="w-4 -mt-1" src="../assets/homepage/up-svg.svg">
-            </div>
+    <div :class="{'slide' : smallNav, 'unslide': !smallNav}" class="relative flex flex-row gap-5 text-4xl p-4 w-min place-content-center">
+        
+        <div class="flex flex-col items-center">
+            <router-link class="m-0 p-0 transition ease-in-out delay-50 text-white hover:-translate-y-0.5 hover:scale-110 hover:text-otley-dark-blue duration-300" to="/">Home</router-link>
+            <img v-if="checkCurrentRoute('Home')" class="w-4 -mt-1" src="../assets/homepage/up-svg.svg">
+        </div>
+        <div class="flex flex-col items-center">
+            <router-link class="m-0 p-0 transition ease-in-out delay-50 text-white hover:-translate-y-0.5 hover:scale-110 hover:text-otley-dark-blue duration-300" to="/about">About</router-link>
+            <img v-if="checkCurrentRoute('About')" class="w-4 -mt-1" src="../assets/homepage/up-svg.svg">
+        </div>
+        <div class="flex flex-col items-center">
+            <router-link class="m-0 p-0 transition ease-in-out delay-50 text-white hover:-translate-y-0.5 hover:scale-110 hover:text-otley-dark-blue duration-300" to="/contact">Contact</router-link>
+            <img v-if="checkCurrentRoute('Contact')" class="w-4 -mt-1" src="../assets/homepage/up-svg.svg">
+        </div>
 
-         </div>
+        </div>
 
     </div>
 
@@ -37,8 +37,7 @@
     const router = useRouter();
     const smallNav = ref(!props.homepage);
 
-    let justChanged = false;
-    let currrentRouteName = router.currentRoute.value.name;
+    var currrentRouteName = router.currentRoute.value.name;
 
     if (props.homepage) window.addEventListener('scroll', handleScroll);
     onUnmounted(() => {
@@ -52,21 +51,14 @@
 
     function handleScroll() {
         if (document.documentElement.scrollTop > 0) {
-            if (!smallNav.value && !justChanged) {
-                setTimeout(() => {
-                    window.scrollTo({ top: 1, left: 0, behavior: 'smooth' });
-                }, 800);
-                justChanged = true;
-            }
             smallNav.value = true;
         } else {
             smallNav.value = false;
-            justChanged = false;
         }
     }
 </script>
 
-<style>
+<style scoped>
     .router-link-active {
         margin: 0;
         padding: 0;
@@ -74,26 +66,28 @@
         pointer-events: none;
     }
 
-    .sticky{
-        position: sticky;
-        top: 0;
+    .unpadded{
         padding-top: 0rem;
         transition: padding 1s ease;
     }
 
-    .unstick {
+    .padded {
         padding-top: 22rem;
         transition: padding 1s ease;
     }
 
     .slide {
-        left: 0.5rem;
+        left: 20rem;
+        font-size: 1.5rem;
+        padding: 0.5rem;
         transform: translateX(-0%);
         transition: all 1s ease;
     }
 
     .unslide{
         left: 50%;
+        font-size:2.25rem;
+        padding: 1rem;
         transform: translateX(-50%);
         transition: all 1s ease;
     }

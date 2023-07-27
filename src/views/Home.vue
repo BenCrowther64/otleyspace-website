@@ -1,14 +1,21 @@
 <script setup>
   import Header from "../components/Header.vue";
   import Navbar from "../components/NavBar.vue";
+  import Footer from "../components/Footer.vue";
 </script>
 
 
 <template>
-    <Header/>
+    <Header :homepage='true'/>
     <Navbar :homepage='true'/>
-    <div class="w-4/5 bg-white z-10">
-      <h1 class="inset-x-1/3 w-2/12">
+    <div class="relative h-screen w-full"> 
+      <img src='../assets/homepage/temp.jpg' class="w-full h-full object-cover"/>
+      <Transition name="appear-slide" appear>
+        <h1 class="absolute top-60 left-80 text-white text-8xl">HOMEPAGE</h1>
+      </Transition>
+    </div>
+    <div class="max-x-full px-80 py-10 bg-teal-50 z-10 ">
+      <h1 class="">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a massa id massa dignissim ultricies. Integer ante lectus, pellentesque sit amet dolor nec, porta feugiat nibh. Maecenas malesuada purus felis, maximus elementum dolor mattis et. Vivamus vel leo tincidunt ipsum fermentum dignissim. Vivamus pulvinar nulla vel nulla mollis, in cursus elit volutpat. Nullam felis mauris, scelerisque vehicula ornare eu, aliquam eget ipsum. Praesent dignissim ligula et nulla lobortis, et euismod odio bibendum. Nulla id enim quis velit rutrum efficitur sit amet vitae mi. Donec vitae lacus rutrum, hendrerit ex in, lacinia ligula. Phasellus tincidunt lorem at varius congue. Fusce eu interdum justo. In hac habitasse platea dictumst. Morbi dapibus ex turpis, ut aliquet purus vehicula vitae. Maecenas ultrices faucibus erat, et posuere ante pulvinar eget.
 
         Vivamus consectetur bibendum aliquet. Cras rutrum auctor sagittis. In nulla nisl, eleifend a tristique id, vehicula a tortor. Vestibulum non arcu orci. Praesent urna leo, vestibulum vitae ex sed, cursus lobortis turpis. Mauris iaculis tellus augue, vel dapibus erat luctus eu. Praesent vestibulum fermentum diam quis fermentum. Sed volutpat ac leo at posuere. Mauris iaculis turpis risus, nec pellentesque turpis blandit eget. Integer eget sodales ipsum. Donec auctor nulla at ante lacinia scelerisque nec eu nulla. Vestibulum non lacus nulla. Duis feugiat scelerisque mollis. Duis accumsan finibus tellus suscipit tempor. Duis ut auctor felis. Praesent pulvinar lobortis neque in ullamcorper.
@@ -30,4 +37,20 @@
         Fusce nec magna tortor. Integer nisi turpis, gravida sit amet ex a, venenatis finibus orci. Fusce tempus fermentum lectus, id laoreet turpis dictum ac. Donec eget erat ac risus vulputate placerat sed sit amet eros. Sed iaculis nibh ut nisi mollis euismod. In hac habitasse platea dictumst. Suspendisse placerat elit sed massa euismod ultricies. Suspendisse nec rutrum nunc. Nunc in pellentesque felis, vitae ultrices eros. Sed tincidunt, tellus id tempus facilisis, dui ante posuere ante, a ultricies tellus elit at ante. Pellentesque lacinia nisl at sapien molestie interdum. Cras sollicitudin vitae lorem at elementum. Mauris ultricies nibh eu sapien ultrices malesuada et ut ligula. Vivamus eget tortor laoreet, aliquam nisi nec, accumsan augue. Etiam euismod hendrerit cursus. Nulla facilisi.
       </h1>
     </div>
+
+    <Footer/>
 </template>
+
+<style scoped>
+  .appear-slide-enter-active {
+    transition: all 2s ease;
+  }
+  .appear-slide-enter-from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  .appear-slide-enter-to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+</style>
