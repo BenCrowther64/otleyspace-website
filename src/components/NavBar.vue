@@ -27,13 +27,22 @@
     import { onUnmounted, ref, } from 'vue';
     import { useRouter } from 'vue-router';
 
+    const props = defineProps({
+        homepage: {
+            type: Boolean,
+            default: false
+        }
+    });
+
     const router = useRouter();
-    const smallNav = ref(false);
+    const smallNav = ref(!props.homepage);
+
+    let justChanged = false;
     let currrentRouteName = router.currentRoute.value.name;
 
-    window.addEventListener('scroll', handleScroll);
+    if (props.homepage) window.addEventListener('scroll', handleScroll);
     onUnmounted(() => {
-        window.removeEventListener('scroll', handleScroll);
+        if (props.homepage) window.removeEventListener('scroll', handleScroll);
     });
 
     function checkCurrentRoute(name) {
@@ -43,10 +52,16 @@
 
     function handleScroll() {
         if (document.documentElement.scrollTop > 0) {
+            if (!smallNav.value && !justChanged) {
+                setTimeout(() => {
+                    window.scrollTo({ top: 1, left: 0, behavior: 'smooth' });
+                }, 800);
+                justChanged = true;
+            }
             smallNav.value = true;
-            window.scrollTo({ top: 1, left: 0, behavior: 'smooth' });
         } else {
             smallNav.value = false;
+            justChanged = false;
         }
     }
 </script>

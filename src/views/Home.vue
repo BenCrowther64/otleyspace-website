@@ -6,7 +6,7 @@
 
 <template>
     <Header/>
-    <Navbar/>
+    <Navbar :homepage='true'/>
     <div class="w-4/5 bg-white z-10">
       <h1 class="inset-x-1/3 w-2/12">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a massa id massa dignissim ultricies. Integer ante lectus, pellentesque sit amet dolor nec, porta feugiat nibh. Maecenas malesuada purus felis, maximus elementum dolor mattis et. Vivamus vel leo tincidunt ipsum fermentum dignissim. Vivamus pulvinar nulla vel nulla mollis, in cursus elit volutpat. Nullam felis mauris, scelerisque vehicula ornare eu, aliquam eget ipsum. Praesent dignissim ligula et nulla lobortis, et euismod odio bibendum. Nulla id enim quis velit rutrum efficitur sit amet vitae mi. Donec vitae lacus rutrum, hendrerit ex in, lacinia ligula. Phasellus tincidunt lorem at varius congue. Fusce eu interdum justo. In hac habitasse platea dictumst. Morbi dapibus ex turpis, ut aliquet purus vehicula vitae. Maecenas ultrices faucibus erat, et posuere ante pulvinar eget.
