@@ -22,7 +22,7 @@ export default {
         }
       },
       backgroundImage: {
-        'waves': "url('src/assets/branding/waves.svg')",
+        'waves': "url('./src/assets/branding/waves.svg')",
       },
       height: {
         '1/10': '10%',
