@@ -8,10 +8,10 @@
 <template>
     <Header :homepage='true'/>
     <Navbar :homepage='true'/>
-    <div class="relative w-full h-1/2 lg:h-screen"> 
-      <img src='../assets/homepage/temp.jpg' class="w-full h-1/2 lg:h-full object-cover"/>
+    <div class="relative w-full h-1/2-screen lg:h-screen"> 
+      <img src='../assets/homepage/temp.jpg' class="w-full h-full object-cover"/>
       <Transition name="appear-slide" appear>
-        <h1 class="absolute top-1/2 left-10 lg:top-60 lg:left-80 text-white text-4xl lg:text-8xl">HOMEPAGE</h1>
+        <h1 class="absolute top-1/2 left-2 lg:top-60 lg:left-80 text-white text-5xl lg:text-8xl">HOMEPAGE</h1>
       </Transition>
     </div>
     <div class="max-w-full p-2 lg:px-80 lg:py-10 bg-teal-50 z-10 ">
@@ -42,6 +42,7 @@
 </template>
 
 <style scoped>
+
   .appear-slide-enter-active {
     transition: all 2s ease;
   }

@@ -26,6 +26,7 @@ export default {
       },
       height: {
         '1/10': '10%',
+        '1/2-screen': '50vh',
       },
       margin: {
         'x-50': '0  35%',
