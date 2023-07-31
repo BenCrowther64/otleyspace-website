@@ -42,14 +42,20 @@
 
 <style scoped>
   .appear-slide-enter-active {
-    transition: all 2s ease;
+    transition: all 0.5s ease-in-out;
   }
   .appear-slide-enter-from {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(50%);
   }
   .appear-slide-enter-to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0%);
+  }
+
+  @media (min-width: 1024px) {
+    .appear-slide-enter-active {
+      transition: all 1s ease-in-out;
+    }
   }
 </style>

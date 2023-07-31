@@ -1,5 +1,5 @@
 <template>
-    <Transition name="header-up">
+    <Transition appear name="header-up">
         <img v-show="!hasScroll && homepage" @mouseover="warnDisabled" :class="{ 'animate-rotate-y' : disabled && !hasScroll}" class="absolute w-80 left-1/2 -ml-40 mt-8 z-50" src="../assets/branding/otley-space-logo.png" alt="Otley Space Logo">
     </Transition>
 </template>
@@ -52,16 +52,16 @@
         opacity: 0;
     }
 
-@media (min-width: 1024px) {
-    .header-up-enter-active,
-    .header-up-leave-active{
-        transition: all 1s ease;
-    }
+    @media (min-width: 1024px) {
+        .header-up-enter-active,
+        .header-up-leave-active{
+            transition: all 1s ease;
+        }
 
-    .header-up-enter-from,
-    .header-up-leave-to {
-        transform: translateY(-100%);
-        opacity: 0;
+        .header-up-enter-from,
+        .header-up-leave-to {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
     }
-}
 </style>

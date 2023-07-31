@@ -11,7 +11,7 @@
     <div class="relative w-full h-1/2-screen lg:h-screen"> 
       <img src='../assets/homepage/temp.jpg' class="w-full h-full object-cover"/>
       <Transition name="appear-slide" appear>
-        <h1 class="absolute top-1/2 left-2 lg:top-60 lg:left-80 text-white text-5xl lg:text-8xl">HOMEPAGE</h1>
+        <h1 class="absolute top-1/2 left-1/2 -translate-x-1/2 lg:top-60 lg:-translate-x-0 lg:left-80 text-white text-5xl lg:text-8xl">HOMEPAGE</h1>
       </Transition>
     </div>
     <div class="max-w-full p-2 lg:px-80 lg:py-10 bg-teal-50 z-10 ">
@@ -42,16 +42,29 @@
 </template>
 
 <style scoped>
-
   .appear-slide-enter-active {
-    transition: all 2s ease;
+    transition: all 0.5s ease-in-out;
   }
   .appear-slide-enter-from {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
   .appear-slide-enter-to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(-50%);
+  }
+
+  @media (min-width: 1024px) {
+    .appear-slide-enter-active {
+      transition: all 1s ease-in-out;
+    }
+    .appear-slide-enter-from {
+      opacity: 0;
+      transform: translateX(50%);
+    }
+    .appear-slide-enter-to {
+      opacity: 1;
+      transform: translateX(0%);
+    }
   }
 </style>
