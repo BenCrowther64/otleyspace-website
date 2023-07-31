@@ -2,7 +2,7 @@
 
     <div :class="{'unpadded' : smallNav, 'padded' : !smallNav}" class="sticky top-0 bg-waves z-40 bg-otley-light-blue bg-repeat">
 
-    <div :class="{'slide' : smallNav, 'unslide': !smallNav}" class="relative flex flex-row gap-5 text-4xl p-4 w-min place-content-center">
+    <div :class="{'slide' : smallNav, 'unslide': !smallNav}" class="relative flex flex-row gap-5 text-4xl w-min place-content-center">
         
         <div class="flex flex-col items-center">
             <router-link class="m-0 p-0 transition ease-in-out delay-50 text-white hover:-translate-y-0.5 hover:scale-110 hover:text-otley-dark-blue duration-300" to="/">Home</router-link>
@@ -65,23 +65,22 @@
         color: #22314E;
         pointer-events: none;
     }
-
     .unpadded{
-        padding-top: 0rem;
-        transition: padding 1s ease;
-    }
+            padding-top: 0rem;
+            transition: padding 0.5s ease;
+        }
 
     .padded {
         padding-top: 22rem;
-        transition: padding 1s ease;
+        transition: padding 0.5s ease;
     }
 
     .slide {
-        left: 20rem;
+        left: 0.5rem;
         font-size: 1.5rem;
-        padding: 0.5rem;
+        padding: 0.5rem 0rem;
         transform: translateX(-0%);
-        transition: all 1s ease;
+        transition: all 0.5s ease;
     }
 
     .unslide{
@@ -89,6 +88,34 @@
         font-size:2.25rem;
         padding: 1rem;
         transform: translateX(-50%);
-        transition: all 1s ease;
+        transition: all 0.5s ease;
+    }
+
+    @media (min-width: 1024px) {
+        .unpadded{
+            padding-top: 0rem;
+            transition: padding 1s ease;
+        }
+
+        .padded {
+            padding-top: 22rem;
+            transition: padding 1s ease;
+        }
+
+        .slide {
+            left: 20rem;
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            transform: translateX(-0%);
+            transition: all 1s ease;
+        }
+
+        .unslide{
+            left: 50%;
+            font-size:2.25rem;
+            padding: 1rem;
+            transform: translateX(-50%);
+            transition: all 1s ease;
+        }
     }
 </style>

@@ -1,9 +1,9 @@
 <template>
 
-    <div class="px-80 py-10 flex flex-row items-center justify-left gap-60 bg-waves bg-otley-light-blue bg-repeat">
-        <img src="../assets/branding/otley-space-logo.png" class="w-60"/>
+    <div class="max-w-full flex flex-col lg:flex-row items-center justify-left gap-10 lg:gap-60 py-5 lg:px-80 lg:py-10 bg-waves bg-otley-light-blue bg-repeat">
+        <img src="../assets/branding/otley-space-logo.png" class="w-60 lg:w-60"/>
 
-        <div class="text-xl text-otley-dark-blue flex gap-20">
+        <div class="text-xl flex-row text-otley-dark-blue flex gap-20">
 
             <div class="flex flex-col">
 

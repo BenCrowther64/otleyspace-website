@@ -40,6 +40,19 @@
 </script>
 
 <style scoped>
+
+    .header-up-enter-active,
+    .header-up-leave-active{
+        transition: all 0.5s ease;
+    }
+
+    .header-up-enter-from,
+    .header-up-leave-to {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+@media (min-width: 1024px) {
     .header-up-enter-active,
     .header-up-leave-active{
         transition: all 1s ease;
@@ -50,4 +63,5 @@
         transform: translateY(-100%);
         opacity: 0;
     }
+}
 </style>
