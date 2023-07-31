@@ -2,7 +2,7 @@
 
     <div :class="{'unpadded' : smallNav, 'padded' : !smallNav}" class="sticky top-0 bg-waves z-40 bg-otley-light-blue bg-repeat">
         <Transition appear name="opacity"> 
-            <div :class="{'slide' : smallNav, 'unslide': !smallNav}" class="relative flex flex-row gap-5 text-4xl w-min place-content-center">
+            <div :class="{'slide' : smallNav, 'unslide': !smallNav}" class="relative flex flex-row gap-5 text-3xl lg:text-4xl w-min place-content-center">
                 <div class="flex flex-col items-center">
                     <router-link class="m-0 p-0 transition ease-in-out delay-50 text-white hover:-translate-y-0.5 hover:scale-110 hover:text-otley-dark-blue duration-300" to="/">Home</router-link>
                     <img v-if="checkCurrentRoute('Home')" class="w-4 -mt-1" src="../assets/homepage/up-svg.svg">
@@ -80,7 +80,7 @@
     }
 
     .padded {
-        padding-top: 22rem;
+        padding-top: 19rem;
         transition: padding 0.5s ease;
     }
 
@@ -94,7 +94,7 @@
 
     .unslide{
         left: 50%;
-        font-size:2.25rem;
+        font-size:1.875rem;
         padding: 1rem;
         transform: translateX(-50%);
         transition: all 0.5s ease;
