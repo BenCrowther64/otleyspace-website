@@ -1,7 +1,7 @@
 <template>
-    <div class = "absolute w-full">
+    <div class = "absolute w-full h-full">
         <Transition appear name="header-up">
-            <img v-show="!hasScroll && homepage" @mouseover="warnDisabled" :class="{ 'animate-rotate-y' : disabled && !hasScroll}" class="relative left-1/2 w-64 lg:w-80 -ml-32 lg:-ml-40 mt-8 z-50" src="../assets/branding/otley-space-logo.png" alt="Otley Space Logo">
+            <img v-show="!hasScroll && homepage" @mouseover="warnDisabled" :class="{ 'animate-rotate-y' : disabled && !hasScroll}" class="relative left-1/2 w-64 lg:w-80 -ml-32 lg:-ml-40 mt-8 z-50 rotate-fix" src="../assets/branding/otley-space-logo.png" alt="Otley Space Logo">
         </Transition>
     </div> 
 </template>
@@ -42,6 +42,11 @@
 </script>
 
 <style scoped>
+
+    .rotate-fix {
+        transform: translateZ(100px) perspective(300px);
+        transform-style: preserve-3d;        
+    }
 
     .header-up-enter-active,
     .header-up-leave-active{
