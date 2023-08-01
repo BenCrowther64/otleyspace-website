@@ -1,7 +1,9 @@
 <template>
-    <Transition appear name="header-up">
-        <img v-show="!hasScroll && homepage" @mouseover="warnDisabled" :class="{ 'animate-rotate-y' : disabled && !hasScroll}" class="absolute left-1/2 w-64 lg:w-80 -ml-32 lg:-ml-40 mt-8 z-0" src="../assets/branding/otley-space-logo.png" alt="Otley Space Logo">
-    </Transition>
+    <div class = "absolute w-full">
+        <Transition appear name="header-up">
+            <img v-show="!hasScroll && homepage" @mouseover="warnDisabled" :class="{ 'animate-rotate-y' : disabled && !hasScroll}" class="relative left-1/2 w-64 lg:w-80 -ml-32 lg:-ml-40 mt-8 z-50" src="../assets/branding/otley-space-logo.png" alt="Otley Space Logo">
+        </Transition>
+    </div> 
 </template>
 
 <script setup>
