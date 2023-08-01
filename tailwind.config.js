@@ -14,6 +14,8 @@ export default {
       },
       animation: {
         'rotate-y': 'rotate-y 1s linear 1',
+        '-webkit-backface-visibility': 'hidden',
+        'backface-visibility': 'hidden',
       },
       keyframes: {
         'rotate-y': {
