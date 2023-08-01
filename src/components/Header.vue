@@ -1,6 +1,6 @@
 <template>
     <Transition appear name="header-up">
-        <img v-show="!hasScroll && homepage" @mouseover="warnDisabled" :class="{ 'animate-rotate-y' : disabled && !hasScroll}" class="absolute left-1/2 w-64 lg:w-80 -ml-32 lg:-ml-40 mt-8 z-50 rotate-fix" src="../assets/branding/otley-space-logo.png" alt="Otley Space Logo">
+        <img v-show="!hasScroll && homepage" @mouseover="warnDisabled" :class="{ 'animate-rotate-y' : disabled && !hasScroll}" class="absolute left-1/2 w-64 lg:w-80 -ml-32 lg:-ml-40 mt-8 z-0" src="../assets/branding/otley-space-logo.png" alt="Otley Space Logo">
     </Transition>
 </template>
 
@@ -40,11 +40,6 @@
 </script>
 
 <style scoped>
-
-    .rotate-fix {
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-    }
 
     .header-up-enter-active,
     .header-up-leave-active{
