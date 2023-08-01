@@ -17,8 +17,7 @@ export default {
       },
       keyframes: {
         'rotate-y': {
-          '0% ': { transform: 'rotateY(0deg)' },
-          '50%' : { transform: 'rotateY(180deg)' },
+          '0% ': { transform: 'rotate3d(0)' },
           '100%': { transform: 'rotateY(360deg)' },
         }
       },
