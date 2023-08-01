@@ -1,6 +1,6 @@
 <template>
     <Transition appear name="header-up">
-        <div v-show="!hasScroll && homepage" class="absolute w-full h-full z-20">
+        <div v-show="!hasScroll && homepage" class="absolute w-full z-20">
             <img @mouseover="warnDisabled" :class="{ 'animate-rotate-y' : disabled && !hasScroll}" class="w-64 lg:w-80 m-auto mt-6 rotate-fix" src="../assets/branding/otley-space-logo.png" alt="Otley Space Logo">
         </div>
     </Transition>
