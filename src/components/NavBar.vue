@@ -1,6 +1,6 @@
 <template>
 
-    <div :class="{'unpadded' : smallNav, 'padded' : !smallNav}" class="sticky top-0 bg-waves z-0 bg-otley-light-blue bg-repeat">
+    <div :class="{'unpadded' : smallNav, 'padded' : !smallNav}" class="sticky top-0 bg-waves z-10 bg-otley-light-blue bg-repeat">
         <Transition appear name="opacity"> 
             <div :class="{'slide' : smallNav, 'unslide': !smallNav}" class="relative flex flex-row gap-5 text-3xl lg:text-4xl w-min place-content-center">
                 <div class="flex flex-col items-center">
