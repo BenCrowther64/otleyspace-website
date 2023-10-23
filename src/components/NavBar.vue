@@ -2,7 +2,7 @@
 
     <div :class="{'unpadded' : smallNav, 'padded' : !smallNav}" class="sticky top-0 bg-waves z-10 bg-otley-light-blue bg-repeat">
         <Transition appear name="opacity"> 
-            <div :class="{'slide' : smallNav, 'unslide': !smallNav}" class="relative flex flex-row gap-5 text-3xl lg:text-4xl w-min place-content-center">
+            <div :class="{'slide' : smallNav, 'unslide': !smallNav}" class="relative flex flex-row gap-3 text-3xl lg:text-4xl w-min place-content-center">
                 <div class="flex flex-col items-center">
                     <router-link class="m-0 p-0 transition ease-in-out delay-50 text-white hover:-translate-y-0.5 hover:scale-110 hover:text-otley-dark-blue duration-300" to="/">Home</router-link>
                     <img v-if="checkCurrentRoute('Home')" class="w-4 -mt-1" src="../assets/homepage/up-svg.svg">
@@ -10,6 +10,22 @@
                 <div class="flex flex-col items-center">
                     <router-link class="m-0 p-0 transition ease-in-out delay-50 text-white hover:-translate-y-0.5 hover:scale-110 hover:text-otley-dark-blue duration-300" to="/about">About</router-link>
                     <img v-if="checkCurrentRoute('About')" class="w-4 -mt-1" src="../assets/homepage/up-svg.svg">
+                </div>
+                <div class="flex flex-col items-center">
+                    <router-link class="m-0 p-0 transition ease-in-out delay-50 text-white hover:-translate-y-0.5 hover:scale-110 hover:text-otley-dark-blue duration-300" to="/gallery">Gallery</router-link>
+                    <img v-if="checkCurrentRoute('Gallery')" class="w-4 -mt-1" src="../assets/homepage/up-svg.svg">
+                </div>
+                <div class="flex flex-col items-center">
+                    <router-link class="m-0 p-0 transition ease-in-out delay-50 text-white hover:-translate-y-0.5 hover:scale-110 hover:text-otley-dark-blue duration-300" to="/people">People</router-link>
+                    <img v-if="checkCurrentRoute('People')" class="w-4 -mt-1" src="../assets/homepage/up-svg.svg">
+                </div>
+                <div class="flex flex-col items-center">
+                    <router-link class="m-0 p-0 transition ease-in-out delay-50 text-white hover:-translate-y-0.5 hover:scale-110 hover:text-otley-dark-blue duration-300" to="/events">Events</router-link>
+                    <img v-if="checkCurrentRoute('Events')" class="w-4 -mt-1" src="../assets/homepage/up-svg.svg">
+                </div>
+                <div class="flex flex-col items-center">
+                    <router-link class="m-0 p-0 transition ease-in-out delay-50 text-white hover:-translate-y-0.5 hover:scale-110 hover:text-otley-dark-blue duration-300" to="/events">Policies</router-link>
+                    <img v-if="checkCurrentRoute('Policies')" class="w-4 -mt-1" src="../assets/homepage/up-svg.svg">
                 </div>
                 <div class="flex flex-col items-center">
                     <router-link class="m-0 p-0 transition ease-in-out delay-50 text-white hover:-translate-y-0.5 hover:scale-110 hover:text-otley-dark-blue duration-300" to="/contact">Contact</router-link>
@@ -86,18 +102,18 @@
 
     .slide {
         left: 0.5rem;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
         padding: 0.5rem 0rem;
-        transform: translateX(-0%);
-        transition: all 0.5s ease;
+        transform: translateX(0%);
+        transition: transform 0.5s ease;
     }
 
     .unslide{
         left: 50%;
-        font-size:1.875rem;
-        padding: 1rem;
+        font-size: 1.1rem;
+        padding: 1rem 0rem;
         transform: translateX(-50%);
-        transition: all 0.5s ease;
+        transition: transform 0.5s ease;
     }
 
     @media (min-width: 1024px) {

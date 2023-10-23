@@ -1,18 +1,13 @@
 <script setup>
   import Navbar from "../components/NavBar.vue";
   import Footer from "../components/Footer.vue";
+  import Carousel from "../components/Carousel.vue";
 </script>
 
 
 <template>
     <Navbar/>
-
-    <div class="relative w-full h-1/2-screen lg:h-screen"> 
-      <img src='../assets/homepage/temp.jpg' class="w-full h-full object-cover"/>
-      <Transition name="appear-slide" appear>
-        <h1 class="absolute top-1/2 left-2 lg:top-60 lg:left-80 text-white text-5xl lg:text-8xl">CONTACT</h1>
-      </Transition>
-    </div>
+    <Carousel pagename="CONTACT"/>
     <div class="max-w-full p-2 lg:px-80 lg:py-10 bg-teal-50 z-10 ">
       <h1 class="">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a massa id massa dignissim ultricies. Integer ante lectus, pellentesque sit amet dolor nec, porta feugiat nibh. Maecenas malesuada purus felis, maximus elementum dolor mattis et. Vivamus vel leo tincidunt ipsum fermentum dignissim. Vivamus pulvinar nulla vel nulla mollis, in cursus elit volutpat. Nullam felis mauris, scelerisque vehicula ornare eu, aliquam eget ipsum. Praesent dignissim ligula et nulla lobortis, et euismod odio bibendum. Nulla id enim quis velit rutrum efficitur sit amet vitae mi. Donec vitae lacus rutrum, hendrerit ex in, lacinia ligula. Phasellus tincidunt lorem at varius congue. Fusce eu interdum justo. In hac habitasse platea dictumst. Morbi dapibus ex turpis, ut aliquet purus vehicula vitae. Maecenas ultrices faucibus erat, et posuere ante pulvinar eget.
